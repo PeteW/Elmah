@@ -1,6 +1,7 @@
-site_name: 'example-docs'
+site_name: 'ELMAH Docs'
 nav:
   - Home: index.md
+  - Changelog: changelog.md
 plugins:
   - techdocs-core
 
