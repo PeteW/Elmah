@@ -14,7 +14,7 @@ metadata:
   description: Exception Logging Module and Handler (ELMAH)
   # optional. free-form tags
   tags:
-    - C#
+    - csharp
     - backend
     - core-library
   # optional. hyperlinks which will appear in the catalog for the entity
