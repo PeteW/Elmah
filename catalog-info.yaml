@@ -21,6 +21,8 @@ metadata:
   links:
     - url: https://elmah.github.io/
       title: Elmah homepage
+  annotations:
+    backstage.io/techdocs-ref: dir:.
 spec:
   # required. for Component valid values are service, website, or library
   type: library
