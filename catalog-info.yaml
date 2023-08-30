@@ -47,7 +47,6 @@ metadata:
 spec:
   # required. for API valid values are openapi, asyncapi, graphql, grpc
   type: openapi
-  lifecycle: production
   # required. for Component valid values are experimental, production, deprecated
   lifecycle: production
   # required. for Component this should be the name of the team owning the component
