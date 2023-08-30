@@ -1,11 +1,5 @@
-# the apiVersion is the version of spec format. this guides parsers on how to read the YAML.
-# at the time of this writing the apiVersion should be backstage.io/v1alpha1 but in the future this could be
-# backstage.io/v1
 apiVersion: backstage.io/v1alpha1
-# the `kind` denotes the type of entity. Component, API, Resource are valid values
-# Component is an individual piece of software
-# API is the boundaries between components
-# Resource is infrastructure needed to operate a Component
+# https://backstage.io/docs/features/software-catalog/descriptor-format/#kind-component
 kind: Component
 metadata:
   # required. name of the entity
@@ -30,4 +24,34 @@ spec:
   lifecycle: production
   # required. for Component this should be the name of the team owning the component
   owner: net-backend
-
+---
+apiVersion: backstage.io/v1alpha1
+# https://backstage.io/docs/features/software-catalog/descriptor-format/#kind-api
+kind: API
+  # required. name of the entity
+  name: Elmah-API
+  # optional. description should be a short summarization
+  description: An example of API docs
+  # optional. free-form tags
+  tags:
+    - csharp
+    - backend
+    - rest-api
+  # optional. hyperlinks which will appear in the catalog for the entity
+  links:
+    - url: https://elmah.github.io/
+      title: Elmah homepage
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  # required. for API valid values are openapi, asyncapi, graphql, grpc
+  type: openapi
+  lifecycle: production
+  # required. for Component valid values are experimental, production, deprecated
+  lifecycle: production
+  # required. for Component this should be the name of the team owning the component
+  owner: net-backend
+  # required. based on the format defined by the spec.type
+  # this can be used to load the definition of an API entity from a web server and embed it as a string in the field spec.definition
+  definition:
+    $text: https://petstore.swagger.io/v2/swagger.json
